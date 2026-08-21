@@ -1,0 +1,357 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a; /* Dark background */
+    color: #000000; /* Light text */
+    line-height: 1.6;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  .card {
+    background-color: #282828; /* Darker card background */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  }
+  
+  h1, h2, h3 {
+    color: #8c8c8c; /* White headings */
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 1.8em;
+  }
+  
+  h3 {
+    font-size: 1.4em;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border-bottom: 1px solid #3a3a3a; /* Darker border */
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #333; /* Slightly darker header */
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  button {
+    background-color: #6495ed; /* Steel blue button */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #5077c2; /* Darker blue on hover */
+  }
+  
+  select {
+    background-color: #333;
+    color: #e0e0e0;
+    padding: 8px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  select:focus {
+    outline: none;
+    border-color: #6495ed;
+  }
+  
+  .results {
+    background-color: #222;
+    border: 1px solid #3a3a3a;
+    padding: 10px;
+    height: 200px;
+    overflow-y: auto;
+    border-radius: 5px;
+  }
+  
+  .results-entry {
+    margin-bottom: 5px;
+  }
+  
+  .progress-container {
+    width: 100%;
+    background-color: #333;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  .progress-bar {
+    width: 0%;
+    height: 20px;
+    background-color: #6495ed;
+    border-radius: 5px;
+  }
+  
+  .tabs {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 20px;
+  }
+  
+  .tab-button {
+    padding: 10px 20px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: #e0e0e0;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 5px 5px 0 0;
+    transition: background-color 0.3s ease;
+  }
+  
+  .tab-button.active {
+    background-color: #6495ed;
+    color: white;
+    border-color: #6495ed;
+  }
+  
+  .tab-button:hover {
+    background-color: #444;
+  }
+  
+  .tab-content {
+    display: none;
+  }
+  
+  .tab-content.active {
+    display: block;
+  }
+  
+  .race-view {
+      display: flex;
+      justify-content: space-between;
+  }
+  
+  .race-table {
+      width: 48%;
+  }
+  
+  #sprint-container {
+      display: none;
+  }
+  
+  .flex-wrap{
+      display: flex;
+      flex-wrap: wrap;
+  }
+  
+  .grid-cols-1{
+      display: grid;
+      grid-template-columns: 1fr;
+  }
+  .md\:grid-cols-2{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+  }
+  .gap-6{
+      gap: 1.5rem;
+  }
+  .p-4{
+      padding: 1rem;
+  }
+  
+  .max-w-6xl{
+      max-width: 72rem;
+  }
+  .mx-auto{
+      margin-left: auto;
+      margin-right: auto;
+  }
+  .text-center{
+      text-align: center;
+  }
+  .mb-6{
+      margin-bottom: 1.5rem;
+  }
+  .text-3xl{
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+  }
+  .font-bold{
+      font-weight: 700;
+  }
+  .mb-2{
+      margin-bottom: 0.5rem;
+  }
+  .text-gray-600{
+      color: rgb(107 114 128);
+  }
+  .mb-4{
+      margin-bottom: 1rem;
+  }
+  .px-4{
+      padding-left: 1rem;
+      padding-right: 1rem;
+  }
+  .py-2{
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+  }
+  .bg-red-600{
+      background-color: rgb(220 38 38);
+  }
+  .text-white{
+      color: rgb(255 255 255);
+  }
+  .rounded-md{
+      border-radius: 0.375rem;
+  }
+  .hover\:bg-red-700:hover{
+      background-color: rgb(185 28 28);
+  }
+  .mb-8{
+      margin-bottom: 2rem;
+  }
+  .text-xl{
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+  }
+  .bg-gray-100{
+      background-color: rgb(243 244 246);
+      color: rgb(17 24 39);
+  }
+  .p-4{
+      padding: 1rem;
+  }
+  .rounded-lg{
+      border-radius: 0.5rem;
+  }
+  .h-64{
+      height: 16rem;
+  }
+  .mt-2{
+      margin-top: 0.5rem;
+  }
+  .text-sm{
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+  }
+  .text-center{
+      text-align: center;
+  }
+  .overflow-y-auto{
+      overflow-y: auto;
+  }
+  .min-w-full{
+      min-width: 100%;
+  }
+  .px-2{
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+  }
+  .py-1{
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+  }
+  .text-left{
+      text-align: left;
+  }
+  .text-right{
+      text-align: right;
+  }
+  .bg-white{
+      background-color: rgb(255 255 255);
+  }
+  .bg-gray-50{
+      background-color: rgb(249 250 251);
+  }
+  .font-semibold{
+      font-weight: 600;
+  }
+  .mt-4
+  /* Increase spacing between charts and tables */
+#driverStandingsChart,
+#constructorStandingsChart,
+#teamPerformanceChart {
+    margin-bottom: 2rem; /* Increase from current value */
+}
+
+/* Add more space before tables */
+#driverStandingsTable,
+#constructorStandingsTable {
+    margin-top: 14rem; /* Increase from current .mt-4 (1rem) */
+}
+
+/* Make the scrollable area for tables taller if needed */
+.overflow-y-auto {
+    max-height: 300px; /* Adjust as needed */
+}
+/* Style for the simulation controls */
+#numSimulations {
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+#runSimulations {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#runSimulations:hover {
+    background-color: #0056b3;
+}
+.back-button {
+    background-color: #ff1e1e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.back-button:hover {
+    background-color: #cc0000;
+}
+.fastest-lap {
+    position: relative;
+}
+.fastest-lap::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-color: purple;
+}
+.fastest-lap-driver {
+    color: purple;
+    font-weight: bold;
+}

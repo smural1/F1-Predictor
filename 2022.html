@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button class="back-button" onclick="location.href='index.html'">Back</button>
+
+
+    <div class="container">
+        <h1>F1 2022 Season Predictor</h1>
+        <p class="text-gray-600 mb-4">Incorporating team performance differentials, track characteristics, and development rates</p>
+        <button id="simulateButton" class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700">Simulate Full Season</button>
+        <div class="card mb-8">
+            <h2>Simulation Controls</h2>
+            <div class="flex items-center gap-4">
+                <label for="numSimulations">Number of Simulations (1-10000):</label>
+                <input type="number" id="numSimulations" min="1" max="10000" value="1" class="px-2 py-1 w-24 bg-gray-100 text-black rounded">
+                <button id="runSimulations" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Run Simulations</button>
+            </div>
+        </div>
+        <div class="card mb-8">
+            <h2>Team Performance Tracker</h2>
+            <div class="bg-gray-100 p-4 rounded-lg">
+                <div class="h-64" id="teamPerformanceChart">
+                    <p>Performance Chart Placeholder</p>
+                </div>
+                <div class="mt-2 text-sm text-gray-600 text-center">
+                    Higher values indicate better performance. Wet races are indicated in tooltips.
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="card bg-gray-100 p-4 rounded-lg">
+                <h2>Driver Standings</h2>
+                <div class="h-64" id="driverStandingsChart">
+                    <p>Driver Standings Chart Placeholder</p>
+                </div>
+                <div class="mt-4 max-h-96 overflow-y-auto" id="driverStandingsTable">
+                    <table class="min-w-full">
+                        <thead>
+                            <tr>
+                                <th class="px-2 py-1 text-left">Pos</th>
+                                <th class="px-2 py-1 text-left">Driver</th>
+                                <th class="px-2 py-1 text-left">Team</th>
+                                <th class="px-2 py-1 text-right">Points</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="px-2 py-1">1</td>
+                                <td class="px-2 py-1">Max Verstappen</td>
+                                <td class="px-2 py-1">Red Bull</td>
+                                <td class="px-2 py-1 text-right font-semibold">450</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1">2</td>
+                                <td class="px-2 py-1">Charles Leclerc</td>
+                                <td class="px-2 py-1">Ferrari</td>
+                                <td class="px-2 py-1 text-right font-semibold">400</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card bg-gray-100 p-4 rounded-lg">
+                <h2>Constructor Standings</h2>
+                <div class="h-64" id="constructorStandingsChart">
+                    <p>Constructor Standings Chart Placeholder</p>
+                </div>
+                <div class="mt-4" id="constructorStandingsTable">
+                    <table class="min-w-full">
+                        <thead>
+                            <tr>
+                                <th class="px-2 py-1 text-left">Pos</th>
+                                <th class="px-2 py-1 text-left">Team</th>
+                                <th class="px-2 py-1 text-right">Points</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="px-2 py-1">1</td>
+                                <td class="px-2 py-1">Red Bull</td>
+                                <td class="px-2 py-1 text-right font-semibold">800</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1">2</td>
+                                <td class="px-2 py-1">Ferrari</td>
+                                <td class="px-2 py-1 text-right font-semibold">700</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8">
+            <h2>Race Results</h2>
+            <div class="flex-wrap gap-2 mb-4" id="raceButtons">
+                <button class="px-3 py-1 text-sm rounded-md bg-red-600 text-white" data-race="Australia">Australia</button>
+                <button class="px-3 py-1 text-sm rounded-md bg-gray-200" data-race="China">China</button>
+                <button class="px-3 py-1 text-sm rounded-md bg-gray-200" data-race="Japan">Japan</button>
+            </div>
+
+            <div class="card bg-gray-100 p-4 rounded-lg" id="raceResults">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-bold" id="raceTitle">Australia Grand Prix</h3>
+                    <button class="px-3 py-1 text-sm bg-yellow-500 text-white rounded-md hover:bg-yellow-600" id="sprintButton">View Sprint Race</button>
+                </div>
+                <div class="overflow-x-auto" id="raceTable">
+                    <table class="min-w-full">
+                        <thead>
+                            <tr>
+                                <th class="px-2 py-1 text-left">Pos</th>
+                                <th class="px-2 py-1 text-left">Driver</th>
+                                <th class="px-2 py-1 text-left">Team</th>
+                                <th class="px-2 py-1 text-right">Points</th>
+                                <th class="px-2 py-1 text-center">Gap</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="px-2 py-1">1</td>
+                                <td class="px-2 py-1 font-medium">Max Verstappen</td>
+                                <td class="px-2 py-1">Red Bull</td>
+                                <td class="px-2 py-1 text-right">26</td>
+                                <td class="px-2 py-1 text-center">🏎️</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1">2</td>
+                                <td class="px-2 py-1 font-medium">Charles Leclerc</td>
+                                <td class="px-2 py-1">Ferrari</td>
+                                <td class="px-2 py-1 text-right">18</td>
+                                <td class="px-2 py-1 text-center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="2022.js"></script>
+</body>
+</html>
