@@ -1,6 +1,6 @@
 # F1 Season Predictor
 
-A browser-based Monte Carlo simulator for Formula 1 seasons (2022 to 2025). Open `index.html`, pick a season, then simulate the season once or run up to 10,000 simulations to get average championship standings.
+A Monte Carlo simulator for Formula 1 seasons (2022 to 2025). Open `index.html`, pick a season, then simulate the season once or run up to 10,000 simulations to get average championship standings.
 
 ## How it works
 
@@ -20,4 +20,8 @@ Each race is simulated driver by driver:
 | `script.js` | React/Recharts version of the 2025 simulator |
 | `index.html`, `styles.css` | season picker and styling |
 
-Built with JavaScript, HTML and CSS, plus React and Recharts in `script.js`. No install is needed: open `index.html` in a browser.
+## Provenance
+
+The model was originally written in Python with NumPy. This repository holds a JavaScript port, made so it runs in a browser with no install: open `index.html`.
+
+The 2025 back-test (14 of 24 race winners against a naive baseline of 4 of 24, plus the top 5 in the drivers' championship) was run on the pre-season version of the model. `2025.js` was updated afterwards as the season went on, for example with the Red Bull and Racing Bulls driver swap, so this file does not reproduce the pre-season predictions exactly.
